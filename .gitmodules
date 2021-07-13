@@ -1,0 +1,3 @@
+[submodule "mjrl"]
+	path = mjrl
+	url = https://github.com/aravindr93/mjrl.git
