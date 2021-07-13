@@ -1,7 +1,7 @@
 # mujoco-py_rendering
-To test the image rendering performance & installation of mujoco-py (by openai)
+To test the image rendering performance & installation of mujoco-py (openai)
 
-## Setting up instructions
+## Setting up Instructions
 
   - Clone the repository
   ```
@@ -12,6 +12,7 @@ To test the image rendering performance & installation of mujoco-py (by openai)
   - `pip install -e mjrl/.`
 
 ## Running Instructions
+For testing the performance of mujoco-py image rendering : 
 
 ```
 python speedtest.py 
@@ -19,6 +20,24 @@ python speedtest.py
        -e <number of episodes> 
        -p <path to the policy> 
        -c <name of the camera>
+```
+An example `PixelWrapper` class that renders images from multiple cameras is provided in `multicam.py`. To test the code  
+```
+python test_multicam.py 
+       --env_name <env_name> 
+       -e <number of episodes> 
+       -p <path to the policy> 
+       -c <camera1> -c <camera2> ...
+```
+An example code that collects samples using multiple processes is provided in `core.py`. Note that the code base is largely adapted from `https://github.com/aravindr93/mjrl` with some minor changes since the original code base does not handle garabage collection which creates memory issues while using GPU rendering.
+A sample running script `test_sampling.py` is provided  
+```
+python test_sampling.py 
+       --env_name <env_name> 
+       -e <number of episodes> 
+       -p <path to the policy> 
+       -c <camera1> -c <camera2> ...
+       --num_proc <Number of processes to launch in parallel>
 ```
 
 ## Installing mujoco-py with GPU support
