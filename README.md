@@ -3,6 +3,14 @@ To test the image rendering performance & installation of mujoco-py (by openai)
 
 ## Setting up instructions
 
+  - Clone the repository
+  ```
+  git clone --recursive https://github.com/ShahRutav/mujoco-py_rendering.git
+  ```
+  - Install mujoco-py (detailed instructions are provided here https://github.com/ShahRutav/mujoco-py_rendering#installing-mujoco-py-with-gpu-support)
+  - `pip install -r requirements.txt`
+  - `pip install -e mjrl/.`
+
 TODO
 
 ## Running Instructions
