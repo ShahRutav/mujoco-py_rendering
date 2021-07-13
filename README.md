@@ -11,8 +11,6 @@ To test the image rendering performance & installation of mujoco-py (by openai)
   - `pip install -r requirements.txt`
   - `pip install -e mjrl/.`
 
-TODO
-
 ## Running Instructions
 
 ```
