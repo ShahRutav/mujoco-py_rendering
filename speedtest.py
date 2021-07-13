@@ -3,6 +3,7 @@ import click
 import mjrl
 import time
 from termcolor import colored
+from utils import get_policy 
 
 
 # Random policy
@@ -31,12 +32,8 @@ DESC = ""
 @click.option('-p','--policy', type=str, help='Path to policy', default=None)
 def main(env_name, episodes, camera, policy):
     env = gym.make(env_name)
-    if policy is not None:
-        pi = pickle.load(open(policy, 'rb'))
-        mode = 'exploration'
-    else:
-        pi = rand_policy(env)
-        mode = 'exploration'
+    pi = get_policy(env, policy)
+    mode = 'exploration'
     width = 224
     height = 224
     total_rendering_time = 0.0
